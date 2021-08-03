@@ -24,55 +24,17 @@
     <template #end>
       <b-navbar-dropdown class="has-text-white" label="Our Team" right>
         <b-navbar-item>
-          <div class="media">
-            <figure class="media-left">
-              <p class="image is-64x64">
-                <img
-                  src="https://bulma.io/images/placeholders/128x128.png"
-                  alt=""
-                />
-              </p>
-            </figure>
-            <div class="media-content">
-              <div class="content">
-                <p>gtpolak</p>
-              </div>
-            </div>
-          </div>
+          <figure class="image is-64x64">
+              <img src="https://www.steamsignature.com/status/default/76561198193456817.png" alt=""/>
+          </figure>
         </b-navbar-item>
         <b-navbar-item>
-          <div class="media">
-            <figure class="media-left">
-              <p class="image is-64x64">
-                <img
-                  src="https://bulma.io/images/placeholders/128x128.png"
-                  alt=""
-                />
-              </p>
-            </figure>
-            <div class="media-content">
-              <div class="content">
-                <p>gtpolak2</p>
-              </div>
-            </div>
-          </div>
+          <a href="http://www.steamsignature.com/%22%3E">Steam signature</a>
         </b-navbar-item>
         <b-navbar-item>
-          <div class="media">
-            <figure class="media-left">
-              <p class="image is-64x64">
-                <img
-                  src="https://bulma.io/images/placeholders/128x128.png"
-                  alt=""
-                />
-              </p>
-            </figure>
-            <div class="media-content">
-              <div class="content">
-                <p>gtpolak3</p>
-              </div>
-            </div>
-          </div>
+          <a href="steam://friends/add/76561198193456817%22%3E">
+            <img src="http://www.steamsignature.com/AddFriend.png" alt="Add Friend"/>
+          </a>
         </b-navbar-item>
       </b-navbar-dropdown>
     </template>
