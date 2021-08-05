@@ -1,5 +1,5 @@
 <template>
-  <b-navbar centered class="has-background-black">
+  <b-navbar centered class="has-background-black p-3">
     <template #brand>
       <b-navbar-item
         class="has-text-white"
