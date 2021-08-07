@@ -14,8 +14,12 @@
               <b-tab-item label="FACEIT Level Boost">
                 <faceit-level-form></faceit-level-form>
               </b-tab-item>
-              <b-tab-item label="FACEIT ELO Boost"></b-tab-item>
-              <b-tab-item label="FACEIT Test Game"></b-tab-item>
+              <b-tab-item label="FACEIT ELO Boost">
+                <faceit-elo-form></faceit-elo-form>
+              </b-tab-item>
+              <b-tab-item label="FACEIT Test Game">
+                <faceit-test-game></faceit-test-game>
+              </b-tab-item>
             </b-tabs>
           </div>
         </div>
@@ -27,11 +31,15 @@
 <script>
 import MainNavbar from "@/components/MainNavbar";
 import FACEITLevelForm from "@/components/FACEITLevelForm";
+import FACEITEloForm from "@/components/FACEITEloForm";
+import FACEITTestGame from "@/components/FACEITTestGame";
 
 export default {
   components: {
     MainNavbar,
     "faceit-level-form": FACEITLevelForm,
+    "faceit-elo-form": FACEITEloForm,
+    "faceit-test-game": FACEITTestGame
   },
 };
 </script>

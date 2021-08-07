@@ -6,7 +6,6 @@
           <b-radio-button
             v-model="soloDuoType"
             native-value="solo"
-            size="is-medium"
             @input="onTypeSelectChange"
             expanded
           >
@@ -16,7 +15,6 @@
           <b-radio-button
             v-model="soloDuoType"
             native-value="duo"
-            size="is-medium"
             @input="onTypeSelectChange"
             expanded
           >
@@ -47,7 +45,7 @@
             <b-field
               :type="targetLowerThanStartError ? 'is-danger' : 'is-primary'"
             >
-              <b-select @input="onStartLevelChange" expanded>
+              <b-select @input="onLevelChange" v-model="startLevel" expanded>
                 <option
                   v-for="(level, index) in levels"
                   :key="`index-${index}`"
@@ -63,7 +61,7 @@
             <b-field
               :type="targetLowerThanStartError ? 'is-danger' : 'is-primary'"
             >
-              <b-select @input="onTargetLevelChange" expanded>
+              <b-select @input="onLevelChange" v-model="targetLevel" expanded>
                 <option
                   v-for="(level, index) in levels"
                   :key="`index-${index}-1`"
@@ -120,8 +118,8 @@ export default {
       targetLowerThanStartError: false,
       totalCost: 0,
       soloDuoType: "",
-      startLevel: "",
-      targetLevel: "",
+      startLevel: 0,
+      targetLevel: 1,
       // Price to next level (1 -> 2, 3 -> 4 etc)
       levels: [
         {
@@ -232,17 +230,7 @@ export default {
       this.calculateCost();
     },
 
-    onStartLevelChange(value) {
-      this.startLevel = value;
-      this.targetLowerThanStartError = this.startLevel >= this.targetLevel;
-
-      if (this.startLevel && this.targetLevel) {
-        this.calculateCost();
-      }
-    },
-
-    onTargetLevelChange(value) {
-      this.targetLevel = value;
+    onLevelChange() {
       this.targetLowerThanStartError = this.startLevel >= this.targetLevel;
 
       if (this.startLevel && this.targetLevel) {

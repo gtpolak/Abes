@@ -22,21 +22,11 @@
       </b-navbar-dropdown>
     </template>
     <template #end>
-      <b-navbar-dropdown class="has-text-white" label="Our Team" right>
-        <b-navbar-item>
-          <figure class="image is-64x64">
+      <b-navbar-item>
+        <figure class="image is-32x32">
               <img src="https://www.steamsignature.com/status/default/76561198193456817.png" alt=""/>
-          </figure>
-        </b-navbar-item>
-        <b-navbar-item>
-          <a href="http://www.steamsignature.com/%22%3E">Steam signature</a>
-        </b-navbar-item>
-        <b-navbar-item>
-          <a href="steam://friends/add/76561198193456817%22%3E">
-            <img src="http://www.steamsignature.com/AddFriend.png" alt="Add Friend"/>
-          </a>
-        </b-navbar-item>
-      </b-navbar-dropdown>
+        </figure>
+      </b-navbar-item>
     </template>
   </b-navbar>
 </template>
