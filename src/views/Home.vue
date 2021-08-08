@@ -23,20 +23,20 @@
                 </b-carousel-item>
             </b-carousel>
         </section>
-        <section class="section has-text-white has-background-black has-border-top-white">
-            <footer>
-                Stopka
-            </footer>
+        <section class="has-border-top-white">
+            <main-footer></main-footer>
         </section>
     </div>
 </template>
 
 <script>
 import MainNavbar from '@/components/MainNavbar'
+import MainFooter from "@/components/MainFooter";
 
 export default {
     components: {
-        MainNavbar
+        MainNavbar,
+        MainFooter
     },
 
     data() {

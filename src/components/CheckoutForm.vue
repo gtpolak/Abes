@@ -1,7 +1,7 @@
 <template>
   <div class="card has-text-left">
-    <div class="card-header">
-      <div class="card-header-title">Checkout</div>
+    <div class="card-header has-background-primary">
+      <div class="card-header-title has-text-white">Checkout</div>
     </div>
     <div class="card-content">
       <b-field label="Contact method">

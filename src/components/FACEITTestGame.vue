@@ -1,29 +1,27 @@
 <template>
   <div class="container mt-5">
-    <div class="columns">
-      <div class="column is-6 is-offset-3">
+    <div class="columns is-vcentered">
+      <div class="column is-4 is-offset-4">
         <b-field position="is-centered">
           <b-radio-button
             v-model="soloDuoType"
-            native-value="solo"
-            size="is-medium"
-            @input="calculateCost"
-            expanded
-          >
-            <b-icon icon="account"></b-icon>
-            Solo
-          </b-radio-button>
-          <b-radio-button
-            v-model="soloDuoType"
             native-value="duo"
-            size="is-medium"
-            @input="calculateCost"
             expanded
           >
             <b-icon icon="account-multiple"></b-icon>
             Duo
           </b-radio-button>
         </b-field>
+      </div>
+      <div class="column is-1">
+        <b-tooltip position="is-right" multilined>
+          <b-icon icon="information"></b-icon>
+          <template v-slot:content>
+            <div>
+              Only duo test games available.
+            </div>
+          </template>
+        </b-tooltip>
       </div>
     </div>
     <div class="columns mt-3 is-multiline">
@@ -55,23 +53,9 @@ export default {
   data() {
     return {
         isCheckoutModalVisible: false,
-      soloDuoType: "",
-      totalCost: 0
+      soloDuoType: "duo",
+      totalCost: 6
     };
-  },
-
-  methods: {
-      calculateCost() {
-          if (this.soloDuoType === "solo") {
-              this.totalCost = 4
-          }
-          else if (this.soloDuoType === "duo") {
-              this.totalCost = 6
-          }
-          else {
-              this.totalCost = 0
-          }
-      }
   }
 };
 </script>

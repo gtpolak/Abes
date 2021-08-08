@@ -37,7 +37,7 @@
     <!-- Level selection form  -->
     <div class="columns mt-3 py-3">
       <div class="column is-9">
-        <div class="columns is-multiline">
+        <div class="columns is-multiline is-vcentered">
           <div class="column is-3 is-offset-3 has-text-left">
             Current Level:
           </div>

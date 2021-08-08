@@ -10,7 +10,7 @@
       <div class="container">
         <div class="columns">
           <div class="column is-offset-1 is-10">
-            <b-tabs type="is-toggle" position="is-centered" expanded>
+            <b-tabs type="is-boxed" position="is-centered" expanded>
               <b-tab-item label="FACEIT Level Boost">
                 <faceit-level-form></faceit-level-form>
               </b-tab-item>
@@ -25,21 +25,26 @@
         </div>
       </div>
     </section>
+    <section>
+      <main-footer></main-footer>
+    </section>
   </div>
 </template>
 
 <script>
 import MainNavbar from "@/components/MainNavbar";
+import MainFooter from "@/components/MainFooter";
 import FACEITLevelForm from "@/components/FACEITLevelForm";
 import FACEITEloForm from "@/components/FACEITEloForm";
 import FACEITTestGame from "@/components/FACEITTestGame";
 
 export default {
   components: {
-    MainNavbar,
+    "main-navbar": MainNavbar,
     "faceit-level-form": FACEITLevelForm,
     "faceit-elo-form": FACEITEloForm,
-    "faceit-test-game": FACEITTestGame
+    "faceit-test-game": FACEITTestGame,
+    "main-footer": MainFooter
   },
 };
 </script>

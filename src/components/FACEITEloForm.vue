@@ -6,7 +6,6 @@
           <b-radio-button
             v-model="soloDuoType"
             native-value="solo"
-            size="is-medium"
             @input="onTypeSelectChange"
             expanded
           >
@@ -16,7 +15,6 @@
           <b-radio-button
             v-model="soloDuoType"
             native-value="duo"
-            size="is-medium"
             @input="onTypeSelectChange"
             expanded
           >
