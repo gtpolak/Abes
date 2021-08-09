@@ -15,6 +15,11 @@ const router = new VueRouter({
             path: "/faceit",
             name: "FaceIt",
             component: () => import("@/views/FACEIT")
+        },
+        {
+            path: "/rank",
+            name: "Rank",
+            component: () => import("@/views/RANK")
         }
     ]
 })
