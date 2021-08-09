@@ -1,8 +1,7 @@
 <template>
-  <b-navbar centered class="has-background-black p-3">
+  <b-navbar type="is-black" centered spaced>
     <template #brand>
       <b-navbar-item
-        class="has-text-white"
         tag="router-link"
         :to="{ name: 'Home' }"
       >
@@ -10,13 +9,13 @@
       </b-navbar-item>
     </template>
     <template #start>
-      <b-navbar-item tag="router-link" :to="{name: 'FaceIt'}" class="has-text-white">
+      <b-navbar-item tag="router-link" :to="{name: 'FaceIt'}">
         FACEIT BOOST
       </b-navbar-item>
-      <b-navbar-item href="#" class="has-text-white">
+      <b-navbar-item tag="router-link" :to="{name: 'Rank'}">
         RANK BOOST
       </b-navbar-item>
-      <b-navbar-dropdown class="has-text-white" label="OTHER BOOSTS">
+      <b-navbar-dropdown label="OTHER BOOSTS" hoverable>
         <b-navbar-item>ESPORTAL BOOST</b-navbar-item>
         <b-navbar-item>ESEA BOOST</b-navbar-item>
       </b-navbar-dropdown>
@@ -30,9 +29,3 @@
     </template>
   </b-navbar>
 </template>
-
-<style scoped>
-.navbar-start > .navbar-item > a.navbar-link, .navbar-end > .navbar-item > a.navbar-link {
-    color: white;
-}   
-</style>
