@@ -15,10 +15,10 @@
                 </div>
                 <div class="pl-1 has-text-left">
                     <ul style="list-style-type: none">
-                        <li>FACEIT</li>
-                        <li>RANK</li>
-                        <li>ESPORTAL</li>
-                        <li>ESEA</li>
+                        <li><router-link class="has-text-white" :to="{name: 'FaceIt'}">FACEIT</router-link> </li>
+                        <li><router-link class="has-text-white" :to="{name: 'Rank'}">RANK</router-link> </li>
+                        <li><router-link class="has-text-white" :to="{name: 'Esportal'}">ESPORTAL</router-link> </li>
+                        <li><router-link class="has-text-white" :to="{name: 'ESEA'}">ESEA</router-link> </li>
                     </ul>
                 </div>
             </div>

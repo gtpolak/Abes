@@ -10,14 +10,14 @@
     </template>
     <template #start>
       <b-navbar-item tag="router-link" :to="{name: 'FaceIt'}">
-        FACEIT BOOST
+        FACEIT Boost
       </b-navbar-item>
       <b-navbar-item tag="router-link" :to="{name: 'Rank'}">
-        RANK BOOST
+        Rank Boost
       </b-navbar-item>
-      <b-navbar-dropdown label="OTHER BOOSTS" hoverable>
-        <b-navbar-item>ESPORTAL BOOST</b-navbar-item>
-        <b-navbar-item>ESEA BOOST</b-navbar-item>
+      <b-navbar-dropdown label="Other Boosts" hoverable>
+        <b-navbar-item tag="router-link" :to="{name: 'Esportal'}">Esportal Boost</b-navbar-item>
+        <b-navbar-item tag="router-link" :to="{name: 'ESEA'}">ESEA Boost</b-navbar-item>
       </b-navbar-dropdown>
     </template>
     <template #end>
