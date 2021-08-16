@@ -128,82 +128,47 @@ export default {
       // Price to next level (1 -> 2, 3 -> 4 etc)
       ranks: [
         {
-          name: "D-",
-          price: {
-            solo: 12,
-            duo: 18,
-          },
-        },
-        {
-          name: "D",
-          price: {
-            solo: 15,
-            duo: 19,
-          },
-        },
-        {
-          name: "D+",
-          price: {
-            solo: 16,
-            duo: 20,
-          },
-        },
-        {
-          name: "C-",
-          price: {
-            solo: 20,
-            duo: 25,
-          },
-        },
-        {
-          name: "C",
-          price: {
-            solo: 20,
-            duo: 25,
-          },
-        },
-        {
-          name: "C+",
-          price: {
-            solo: 23,
-            duo: 32,
-          },
-        },
-        {
-          name: "B-",
-          price: {
-            solo: 25,
-            duo: 35,
-          },
-        },
-        {
-          name: "B",
-          price: {
-            solo: 35,
-            duo: 50,
-          },
-        },
-        {
-          name: "B+",
+          name: "Silver",
           price: {
             solo: 55,
             duo: 80,
           },
         },
         {
-          name: "A-",
+          name: "Gold",
           price: {
-            solo: 80,
-            duo: 0,
+            solo: 65,
+            duo: 90,
           },
         },
         {
-          name: "A",
+          name: "Veteran",
           price: {
-            solo: 140,
-            duo: null,
+            solo: 75,
+            duo: 105,
           },
         },
+        {
+          name: "Master",
+          price: {
+            solo: 90,
+            duo: 135,
+          },
+        },
+        {
+          name: "Elite",
+          price: {
+            solo: 120,
+            duo: 180,
+          },
+        },
+        {
+          name: "Pro",
+          price: {
+            solo: 0,
+            duo: 0,
+          },
+        }
       ],
     };
   },
