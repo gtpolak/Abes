@@ -54,7 +54,7 @@ export default {
     return {
         isCheckoutModalVisible: false,
       soloDuoType: "solo",
-      totalCost: 25
+      totalCost: 30
     };
   }
 };
