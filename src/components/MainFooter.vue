@@ -4,7 +4,7 @@
             <div class="column is-4 has-text-white has-text-left">
                 <div class="block">
                     <h2 class="title is-3 has-text-primary">
-                        Alex Booster
+                        Pixel Boost
                     </h2>
                 </div>
                 <div></div>
@@ -38,7 +38,7 @@
                     <h3 class="title is-4 has-text-primary">Contact</h3> 
                 </div>
                 <div class="pl-1">
-                    alexbooster@alexbooster.com
+                    pixelboost@pixelboost.com
                 </div>
             </div>
         </div>
@@ -48,7 +48,7 @@
         <hr>
         <div class="columns has-text-white">
             <div class="column is-12">
-                &copy; 2021 AlexBooster 
+                &copy; 2022 Pixel Boost 
             </div>
         </div>
     </footer>

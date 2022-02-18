@@ -5,7 +5,7 @@
         tag="router-link"
         :to="{ name: 'Home' }"
       >
-        AbesBooster
+        <b-image :src="require('@/assets/pixel_boost.png')"></b-image>
       </b-navbar-item>
     </template>
     <template #start>
@@ -20,12 +20,12 @@
         <b-navbar-item tag="router-link" :to="{name: 'ESEA'}">ESEA Boost</b-navbar-item>
       </b-navbar-dropdown>
     </template>
-    <template #end>
+    <!-- <template #end>
       <b-navbar-item>
         <figure class="image is-32x32">
               <img src="https://www.steamsignature.com/status/default/76561198193456817.png" alt=""/>
         </figure>
       </b-navbar-item>
-    </template>
+    </template> -->
   </b-navbar>
 </template>
