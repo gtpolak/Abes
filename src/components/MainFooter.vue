@@ -10,39 +10,47 @@
                 <div></div>
             </div>
             <div class="column is-2 has-text-left has-text-white">
-                <div class="">
-                    <h3 class="is-size-4 gradient-text">Boosters</h3> 
-                </div>
-                <div class="pl-1 has-text-left">
-                    <ul style="list-style-type: none">
-                        <li><router-link class="has-text-white" :to="{name: 'FaceIt'}">Face It</router-link> </li>
-                        <li><router-link class="has-text-white" :to="{name: 'Rank'}">Rank</router-link> </li>
-                        <li><router-link class="has-text-white" :to="{name: 'Esportal'}">Esportal</router-link> </li>
-                        <li><router-link class="has-text-white" :to="{name: 'ESEA'}">ESEA</router-link> </li>
-                    </ul>
+                <div class="columns is-multiline">
+                    <div class="column is-12 pb-0">
+                        <h3 class="is-size-4 gradient-text">Boosters</h3> 
+                    </div>
+                    <div class="column is-12 py-1 pl-4">
+                        <router-link class="has-text-white" :to="{name: 'FaceIt'}">Face It</router-link>
+                    </div>
+                    <div class="column is-12 py-1 pl-4">
+                        <router-link class="has-text-white" :to="{name: 'Rank'}">Rank</router-link>
+                    </div>
+                    <div class="column is-12 py-1 pl-4">
+                        <router-link class="has-text-white" :to="{name: 'Esportal'}">Esportal</router-link>
+                    </div>
+                    <div class="column is-12 py-1 pl-4">
+                        <router-link class="has-text-white" :to="{name: 'ESEA'}">ESEA</router-link>
+                    </div>
                 </div>
             </div>
             <div class="column is-2 has-text-left has-text-white">
-                <div class="">
-                    <h3 class="is-size-4 gradient-text">Social</h3> 
-                </div>
-                <div class="pl-1 has-text-left">
-                    <ul style="list-style-type: none">
-                        <li>
-                            <a href="https://steamcommunity.com/id/plk2k/">Steam</a>
-                        </li>
-                        <li>
-                            <a href="https://discordapp.com/users/439923268905074699/">Discord</a>
-                        </li>
-                    </ul>
+                <div class="columns is-multiline">
+                    <div class="column is-12 pb-0">
+                        <h3 class="is-size-4 gradient-text">Social</h3> 
+                    </div>
+                    <div class="column is-12 py-1 pl-4">
+                        <a href="https://steamcommunity.com/id/plk2k/" class="has-text-white">Steam</a>
+                    </div>
+                    <div class="column is-12 py-1 pl-4">
+                            <a href="https://discordapp.com/users/439923268905074699/" class="has-text-white">Discord</a>
+                    </div>
                 </div>
             </div>
             <div class="column has-text-left has-text-white">
-                <div class="">
-                    <h3 class="is-size-4 gradient-text">Contact</h3> 
+                <div class="columns is-multiline">
+                    <div class="column is-12 pb-0">
+                        <h3 class="is-size-4 gradient-text">Contact</h3> 
+                    </div>
+                    <div class="column py-1 pl-4">
+                        support@pixel-boost.com
+                    </div>
                 </div>
                 <div class="pl-1">
-                    support@pixel-boost.com
                 </div>
             </div>
         </div>
@@ -61,7 +69,8 @@
 export default {
     data() {
         return {
-            year: ""
+            year: "",
+            discordLogo: require('@/assets/discord-mark-blue.png')
         }
     },
     
