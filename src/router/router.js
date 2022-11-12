@@ -31,6 +31,11 @@ const router = new VueRouter({
             name: "ESEA",
             component: () => import("@/views/ESEA")
         },
+        {
+            path: "/:catchAll(.*)",
+            component: () => import("@/views/NotFound"),
+            name: "NotFound"
+        }
     ],
 
     // eslint-disable-next-line no-unused-vars
