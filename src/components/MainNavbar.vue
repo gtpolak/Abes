@@ -6,7 +6,7 @@
         :to="{ name: 'Home' }"
       >
         <!-- <b-image :src="require('@/assets/pixel_boost.png')"></b-image> -->
-        <span class="gradient-text is-size-3">PixelBoost</span>
+        <span class="gradient-text is-size-4">PixelBoost</span>
       </b-navbar-item>
     </template>
     <template #start>
