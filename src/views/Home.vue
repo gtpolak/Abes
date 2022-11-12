@@ -146,15 +146,24 @@
 
       <div class="block"></div>
 
-      <b-carousel
+      <div>
+        <b-carousel
         :arrow="true"
+        :autoplay="false"
         indicator-position="is-top"
         indicator-style="is-boxes"
+        :overlay="galleryOverlay"
+        @click="switchGallery"
       >
         <b-carousel-item v-for="(img, index) in galleryImages" :key="index">
-          <b-image :src="img.imgSrc" :alt="img.imgAlt" class="image is-2by1"></b-image>
+          <div class="columns">
+            <div class="column is-6 is-offset-3">
+              <b-image :src="img.imgSrc" :alt="img.imgAlt" style="object-fit: cover;"></b-image>
+            </div>
+          </div>
         </b-carousel-item>
       </b-carousel>
+      </div>
       <div class="block"></div>
     </section>
     <section class="has-border-top-white">
@@ -175,19 +184,35 @@ export default {
 
   data() {
     return {
+      galleryOverlay: false,
       galleryImages: [
         {
         
-          imgSrc: require("@/assets/gallery_1.png"),
+          imgSrc: require("@/assets/gallery_new_1.jpg"),
           imgAlt: "CS:GO player statistics - image 1"
         },
         {
-          imgSrc: require("@/assets/gallery_2.jpg"),
+          imgSrc: require("@/assets/gallery_new_2.jpg"),
           imgAlt: "CS:GO player statistics - image 2"
+        },
+        {
+          imgSrc: require("@/assets/gallery_new_3.jpg"),
+          imgAlt: "CS:GO player statistics - image 3"
         }
       ],
     };
   },
+
+  methods: {
+    switchGallery() {
+            this.galleryOverlay = !this.galleryOverlay
+            if (this.galleryOverlay) {
+                document.documentElement.classList.add('is-clipped')
+            } else {
+                document.documentElement.classList.remove('is-clipped')
+            }
+        }
+  }
 };
 </script>
 <style>
