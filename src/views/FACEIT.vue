@@ -21,7 +21,7 @@
               <b-tab-item label="FACEIT Level Boost" icon="chevron-triple-up">
                 <faceit-level-form></faceit-level-form>
               </b-tab-item>
-              <b-tab-item label="FACEIT ELO Boost" icon="numeric">
+              <b-tab-item label="FACEIT ELO Boost (Soon)" icon="numeric" disabled>
                 <faceit-elo-form></faceit-elo-form>
               </b-tab-item>
               <b-tab-item label="FACEIT Test Game" icon="handshake-outline">
