@@ -202,7 +202,7 @@ export default {
           name: "Level 10 (Elo 2401 - 2700)",
           price: {
             solo: 350,
-            duo: 300,
+            duo: 400,
           },
         },
         {
@@ -216,10 +216,10 @@ export default {
       formToCheckout: {
         boostName: "Faceit",
         boostOption: "Level Boost",
-        boostType: this.soloDuoType,
-        startLevel: this.startLevel,
-        targetLevel: this.targetLevel,
-        cost: this.totalCost,
+        boostType: "",
+        startLevel: "",
+        targetLevel:"",
+        cost: "",
       },
     };
   },
@@ -264,9 +264,11 @@ export default {
     onLevelChange() {
       this.targetLowerThanStartError = this.startLevel >= this.targetLevel;
 
-      if (this.startLevel && this.targetLevel) {
-        this.calculateCost();
+      if (this.targetLowerThanStartError) {
+        return;
       }
+
+      this.calculateCost();
     },
 
     calculateCost() {
@@ -284,6 +286,7 @@ export default {
       let price = 0;
 
       for (let index = this.startLevel; index < this.targetLevel; index++) {
+        console.log(this.levels[index].price[this.soloDuoType]);
         price += this.levels[index].price[this.soloDuoType];
       }
 

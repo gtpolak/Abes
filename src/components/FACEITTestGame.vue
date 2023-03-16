@@ -1,7 +1,7 @@
 <template>
   <div class="container mt-5">
-    <div class="columns is-vcentered">
-      <div class="column is-4 is-offset-4">
+    <div class="columns is-vcentered is-mobile">
+      <div class="column is-4-desktop is-offset-4-desktop is-10-mobile">
         <b-field position="is-centered">
           <b-radio-button
             v-model="soloDuoType"
@@ -14,7 +14,7 @@
         </b-field>
       </div>
       <div class="column is-1">
-        <b-tooltip position="is-right" multilined>
+        <b-tooltip position="is-left" multilined>
           <b-icon icon="information"></b-icon>
           <template v-slot:content>
             <div>

@@ -2,7 +2,13 @@
   <div class="container mt-5">
     <div class="columns">
       <div class="column is-6 is-offset-3">
-        <b-field position="is-centered">
+        <b-field
+          position="is-centered"
+          label="Type"
+          custom-class="has-text-white"
+          :message="typeNotSelectedError ? 'Type not selected' : ''"
+          :type="{'is-danger' : typeNotSelectedError}"
+        >
           <b-radio-button
             v-model="soloDuoType"
             native-value="solo"
@@ -23,73 +29,66 @@
           </b-radio-button>
         </b-field>
       </div>
-      <div class="column is-3">
-        <b-message
-          v-model="typeNotSelectedError"
-          type="is-danger"
-          class="has-text-left"
+    </div>
+
+    <div class="columns is-multiline">
+      <div class="column is-6 is-offset-3">
+        <b-field
+          type="is-primary"
+          label="Current Level"
+          custom-class="has-text-white"
         >
-          Type not selected.
-        </b-message>
+          <b-select @input="calculateCost" v-model="currentLevel" expanded>
+            <option
+              v-for="(level, index) in levels"
+              :key="`index-${index}`"
+              :value="index"
+            >
+              {{ level.name }}
+            </option>
+          </b-select>
+        </b-field>
+      </div>
+      <div class="column is-6 is-offset-3">
+        <b-field
+          type="is-primary"
+          label="Number of wins"
+          custom-class="has-text-white"
+        >
+          <b-numberinput
+            :min="1"
+            :max="5"
+            v-model="numberOfMatches"
+            @input="calculateCost"
+          ></b-numberinput>
+        </b-field>
       </div>
     </div>
 
-    <!-- Level selection form  -->
-    <div class="columns mt-3 py-3">
-      <div class="column is-9">
-        <div class="columns is-multiline is-vcentered">
-          <div class="column is-3 is-offset-3 has-text-left">
-            Current Level:
-          </div>
-          <div class="column is-6">
-            <b-field type="is-primary">
-              <b-select @input="calculateCost" v-model="currentLevel" expanded>
-                <option
-                  v-for="(level, index) in levels"
-                  :key="`index-${index}`"
-                  :value="index"
-                >
-                  {{ level.name }}
-                </option>
-              </b-select>
-            </b-field>
-          </div>
-          <div class="column is-3 is-offset-3 has-text-left">
-            Number of wins
-          </div>
-          <div class="column is-6">
-            <b-field type="is-primary">
-              <b-numberinput
-                :min="1"
-                :max="5"
-                v-model="numberOfMatches"
-                @input="calculateCost"
-              ></b-numberinput>
-            </b-field>
-          </div>
-        </div>
+    <div class="columns mt-3 is-multiline is-vcentered is-mobile">
+      <div class="column is-2-desktop is-offset-3-desktop is-6-mobile has-text-left">
+        <p class="is-size-5">Total Cost:</p>
       </div>
-    </div>
-    <div class="columns mt-3 is-multiline">
-      <div class="column is-12">
-        Total Cost:
+      <div class="column is-2-desktop is-offset-2-desktop is-6-mobile has-text-right">
         <b-tag size="is-medium" type="is-primary">
           {{ totalCost }}
           <b-icon icon="currency-eur" size="is-small" class="ml-1"></b-icon>
         </b-tag>
       </div>
-      <div class="column is-4 is-offset-4">
+
+      <div class="column is-12-mobile is-6-desktop is-offset-3-desktop">
         <b-button
+          class="gradient-border-rank-button"
           type="is-success"
           expanded
-          @click="isCheckoutModalVisible = true"
+          @click="setCheckoutVisible"
           >Checkout</b-button
         >
       </div>
     </div>
 
     <b-modal v-model="isCheckoutModalVisible" :width="640">
-      <checkout-form></checkout-form>
+      <checkout-form :service-config="formToCheckout"></checkout-form>
     </b-modal>
   </div>
 </template>
@@ -238,10 +237,44 @@ export default {
           },
         },
       ],
+      formToCheckout: {
+        boostName: "Rank",
+        boostOption: "Rank Boosting",
+        boostType: this.soloDuoType,
+        currentLevel: this.currentLevel,
+        winsNumber: this.numberOfMatches,
+        cost: this.totalCost,
+      },
     };
   },
 
   methods: {
+    setCheckoutVisible() {
+      if (this.soloDuoType !== "solo" && this.soloDuoType !== "duo") {
+        this.$buefy.toast.open({
+          duration: 5000,
+          message: "Form not filled",
+          type: "is-warning",
+          position: "is-bottom",
+        });
+        this.isCheckoutModalVisible = false;
+        return;
+      }
+
+      if (this.numberOfMatches > 5) {
+        this.numberOfMatches = 5;
+      } else if (this.numberOfMatches < 1) {
+        this.numberOfMatches = 1;
+      }
+
+      this.formToCheckout.boostType = this.soloDuoType;
+      this.formToCheckout.currentLevel = this.levels[this.currentLevel].name;
+      this.formToCheckout.winsNumber = this.numberOfMatches;
+      this.formToCheckout.cost = this.totalCost;
+
+      this.isCheckoutModalVisible = true;
+    },
+
     onTypeSelectChange() {
       this.typeNotSelectedError = false;
       this.calculateCost();
@@ -254,9 +287,24 @@ export default {
         return;
       }
 
-      this.totalCost = this.levels[this.currentLevel].price[this.soloDuoType] * this.numberOfMatches
-
+      this.totalCost =
+        this.levels[this.currentLevel].price[this.soloDuoType] *
+        this.numberOfMatches;
     },
   },
 };
 </script>
+
+<style>
+.has-border-top-white {
+  border-top: solid white 1px;
+}
+
+.gradient-border-rank-button {
+  background: linear-gradient(
+    135deg,
+    rgba(22, 117, 166, 1) 0%,
+    rgba(70, 245, 56, 1) 100%
+  );
+}
+</style>
